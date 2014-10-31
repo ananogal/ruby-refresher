@@ -87,6 +87,7 @@ end
 
 # return the shortest word in an array
 def longest_word_in_array(array)
+	array.inject{|result, word| result.length > word.length ? result : word }
 end
 
 # add up all the numbers in an array, so [1, 3, 5, 6]
