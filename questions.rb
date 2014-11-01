@@ -215,6 +215,7 @@ end
 
 # count the number of words in a file
 def word_count_a_file(file_path)
+	File.open(file_path) {|f| f.read.gsub(/[^A-Za-z]/, ' ') }.downcase.split().count
 end
 
 # --- tougher ones ---
