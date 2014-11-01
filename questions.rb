@@ -67,9 +67,7 @@ end
 # even numbers come first
 # so [1, 2, 3, 4, 5, 6] becomes [[2, 4, 6], [1, 3, 5]]
 def separate_array_into_even_and_odd_numbers(array)
-	result = []
-	result << array.select{|number| number.even?}
-	result << array.select{|number| number.odd?}
+	left,right = array.partition.each_with_index{ |el, i| i.odd? }
 end
 
 # count the numbers of elements in an element which are palindromes
@@ -99,7 +97,7 @@ end
 # turn an array into itself repeated twice. So [1, 2, 3]
 # becomes [1, 2, 3, 1, 2, 3]
 def double_array(array)
-
+	array.concat(array)
 end
 
 # convert a symbol into a string
@@ -118,6 +116,7 @@ end
 # [1, 3, 5, 4, 1, 2, 6, 2, 1, 3, 7]
 # becomes [1, 3, 5, 4, 1, 2]
 def get_elements_until_greater_than_five(array)
+	array.slice(0, 6)
 end
 
 # turn an array (with an even number of elements) into a hash, by
@@ -151,7 +150,8 @@ end
 # take out all the capital letters from a string
 # so 'Hello JohnDoe' becomes 'ello ohnoe'
 def remove_capital_letters_from_string(string)
-	string.each_char.inject(''){|result, char| /[[:upper:]]/.match(char) ? result : result +=char }
+	#string.each_char.inject(''){|result, char| /[[:upper:]]/.match(char) ? result : result +=char }
+	string.gsub( /[[:upper:]]/, '')
 end
 
 # round up a float up and convert it to an Integer,

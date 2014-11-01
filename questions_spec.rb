@@ -96,7 +96,7 @@ describe 'the Friday test :)' do
     expect(n).to eq 25
   end
 
-  specify 'double_array' do
+  fit 'double_array' do
     n = double_array [1, 2, 3]
     expect(n).to eq [1, 2, 3, 1, 2, 3]
   end
@@ -111,7 +111,7 @@ describe 'the Friday test :)' do
     expect(n).to eq 17
   end
 
-  specify 'get_elements_until_greater_than_five' do
+  fit 'get_elements_until_greater_than_five' do
     n = get_elements_until_greater_than_five [1, 3, 5, 4, 1, 2, 6, 2, 1, 3, 7]
     expect(n).to eq [1, 3, 5, 4, 1, 2]
   end
