@@ -166,12 +166,12 @@ describe 'the Friday test :)' do
     expect(n).to eq 'The Lion the Witch and the Wardrobe'
   end
 
-  specify 'check_a_string_for_special_characters' do
+  fit 'check_a_string_for_special_characters' do
     a = check_a_string_for_special_characters 'ABCdef123'
     b = check_a_string_for_special_characters 'ABC@def123!'
 
-    expect(a).to be_false
-    expect(b).to be_true
+    expect(a).to be_falsey
+    expect(b).to be_truthy
   end
 
   fit 'get_upper_limit_of' do
@@ -179,12 +179,12 @@ describe 'the Friday test :)' do
     expect(n).to eq 20
   end
 
-  specify 'is_a_3_dot_range?' do
+  fit 'is_a_3_dot_range?' do
     a = is_a_3_dot_range? 1..20
     b = is_a_3_dot_range? 1...20
 
-    expect(a).to be_false
-    expect(b).to be_true
+    expect(a).to be_falsey
+    expect(b).to be_truthy
   end
 
   specify 'square_root_of' do
@@ -207,8 +207,8 @@ describe 'the Friday test :)' do
     a = is_a_2014_bank_holiday?(Time.new(2014, 8, 25))
     b = is_a_2014_bank_holiday?(Time.new(2014, 8, 26))
 
-    expect(a).to be_true
-    expect(b).to be_false
+    expect(a).to be_truthy
+    expect(b).to be_falsey
   end
 
   specify 'your_birthday_is_on_a_friday_in_the_year' do
