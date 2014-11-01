@@ -131,6 +131,9 @@ end
 # . e.g. the array ['cat', 'dog', 'fish'] becomes
 # ['a', 'c', 'd', 'f', 'g', 'h', 'i', 'o', 's', 't']
 def get_all_letters_in_array_of_words(array)
+	result = []
+	array.each{|element| result.concat(element.split(//))}
+	result.sort
 end
 
 # swap the keys and values in a hash. e.g.
@@ -190,11 +193,13 @@ end
 # where 'special character' means anything apart from the letters
 # a-z (uppercase and lower) or numbers
 def check_a_string_for_special_characters(string)
+	string.index(/[^[:alnum:]]/)!=nil
 end
 
 # get the upper limit of a range. e.g. for the range 1..20, you
 # should return 20
 def get_upper_limit_of(range)
+	range.last
 end
 
 # should return true for a 3 dot range like 1...20, false for a 
